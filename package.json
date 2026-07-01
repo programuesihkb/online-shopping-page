@@ -1,5 +1,5 @@
 {
-  "name": "online-shipping-page",
+  "name": "online-shopping-page",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.2.10",
+    "@mui/icons-material": "^9.1.1",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router": "^7.18.1"
   },
   "devDependencies": {
     "@types/node": "^24.13.2",
