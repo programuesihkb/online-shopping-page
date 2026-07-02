@@ -1,11 +1,23 @@
-import '../src/styles/index.css';
+import Main from "../components/Main";
+import Navbar from "../components/Navbar";
+import FeaturedProducts from "../components/FeaturedProducts";
+import { Box } from "@mui/material";
 
 function HomePage() {
 
+
   return (
-    <div className="App">
-      <h1>Online Shipping Page</h1>
-    </div>
+    <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+            backgroundColor: 'background.default',
+            color: 'text.primary',
+        }}>
+      <Navbar />
+      <Main />
+      <FeaturedProducts />
+    </Box>
   );
 
 }

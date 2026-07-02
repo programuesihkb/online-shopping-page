@@ -1,9 +1,11 @@
+import Navbar from "../components/Navbar";
 
 const ShoppingCartPage = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar />
+
+    </>
   );
 };
 
