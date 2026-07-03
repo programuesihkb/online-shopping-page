@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketoutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import { Link } from 'react-router';
 
 export default function Navbar() {
