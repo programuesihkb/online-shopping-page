@@ -16,14 +16,13 @@ const useGetProducts = (limit?: number | null, category?: string) => {
 
         const URL = 'https://dummyjson.com/products/'
             + (category ? `category/${categoryFormated}` : '')
-            + (limit ? `?limit=${limit}` : '?limit=28');
+            + (limit === undefined || limit === null ? '?limit=28' : `?limit=${limit}`);
 
         const fetchProducts = async () => {
             setLoading(true);
             try {
                 const response = await axios.get<{ products: productType[] }>(URL, { signal: controller.signal });
                 setProducts(response.data.products);
-                console.log("Fetched products:", response.data.products);
                 setError(null);
             } catch (err) {
                 if ((err as Error).name !== 'AbortError' && !axios.isCancel(err)) {

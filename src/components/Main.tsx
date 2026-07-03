@@ -27,7 +27,7 @@ const Main = () => {
         >
           New Collection
         </Typography>
-        <Typography variant="h2" sx={{ color: 'text.secondary', mb: 3 }}>
+        <Typography variant="h1" sx={{ color: 'text.secondary', mb: 3 }}>
           Timeless Elegance
         </Typography>
         <Button

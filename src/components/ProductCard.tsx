@@ -13,12 +13,16 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import { type productType } from '../types/productType';
+import useCartStore from '../store/useCartStore';
 
-const ProductCard = ({ product }: { product: productType }) => { 
+const ProductCard = ({ product }: { product: productType }) => {
+
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const [quantity, setQuantity] = useState<number | ''>(1);
   const minQuantity = 1;
   const maxQuantity = 99;
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -52,8 +56,8 @@ const ProductCard = ({ product }: { product: productType }) => {
     });
   };
 
-  const handleAddToCart = () => {
-    console.log(`Adding ${quantity} items to cart.`);
+  const handleAddToCart = (id: number, quantity: number) => {
+    addToCart({ productId: id, quantity });
   };
 
   return (
@@ -76,7 +80,7 @@ const ProductCard = ({ product }: { product: productType }) => {
           sx={{
             transition: 'transform 0.4s ease',
             '&:hover': {
-              transform: 'scale(1.03)', 
+              transform: 'scale(1.1)', 
             }
           }}
         />
@@ -168,7 +172,7 @@ const ProductCard = ({ product }: { product: productType }) => {
             variant="contained"
             color="secondary"
             startIcon={<LocalMallOutlinedIcon fontSize="small" />}
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(product.id, Number(quantity))}
             disableElevation
             sx={{
               flexGrow: 1,

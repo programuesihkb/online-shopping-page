@@ -2,6 +2,7 @@ import Main from "../components/Main";
 import Navbar from "../components/Navbar";
 import FeaturedProducts from "../components/FeaturedProducts";
 import { Box } from "@mui/material";
+import Footer from "../components/Footer";
 
 function HomePage() {
 
@@ -17,6 +18,7 @@ function HomePage() {
       <Navbar />
       <Main />
       <FeaturedProducts />
+      <Footer />
     </Box>
   );
 

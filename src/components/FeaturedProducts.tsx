@@ -5,7 +5,7 @@ import useGetProducts from "../services/useGetProducts";
 
 const FeaturedProducts = () => {
   
-  const { products, loading, error } = useGetProducts(4);
+  const { products, loading, error } = useGetProducts(4, 'womens-dresses');
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
